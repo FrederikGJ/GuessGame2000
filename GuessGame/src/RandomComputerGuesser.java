@@ -1,5 +1,3 @@
-import java.util.Random;
-
 public class RandomComputerGuesser implements IGuesser
 {
     private int min;
@@ -20,20 +18,11 @@ public class RandomComputerGuesser implements IGuesser
 
     public int makeGuess()
     {
-        //RandomCOmputerGuesser stars wtih a random guess
-        int range = max - min;
-        Random rn = new Random();
-        return rn.nextInt(range);
-
-
+        return (min + max) / 2;
     }
 
     public void guessFeedback(Answer answer)
     {
-
-        // vi skal bruge alle computerens svar
-
-        
         switch(answer)
         {
             case TOO_LOW:
