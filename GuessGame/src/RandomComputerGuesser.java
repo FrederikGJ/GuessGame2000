@@ -1,7 +1,12 @@
+import java.util.Random;
+
 public class RandomComputerGuesser implements IGuesser
 {
     private int min;
     private int max;
+
+    private int guess;
+
 
     public void yourTurn() {}
 
@@ -18,18 +23,22 @@ public class RandomComputerGuesser implements IGuesser
 
     public int makeGuess()
     {
-        return (min + max) / 2;
+        Random rn = new Random();
+       guess = rn.nextInt(min,max);
+       return guess;
     }
+
+
 
     public void guessFeedback(Answer answer)
     {
         switch(answer)
         {
             case TOO_LOW:
-                min = ((min + max) / 2) + 1;
+                min = guess+1;
                 break;
             case TOO_HIGH:
-                max = ((min + max) / 2) -1;
+                max = guess-1;
                 break;
             case CORRECT:
                 break;
