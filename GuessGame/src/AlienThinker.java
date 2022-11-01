@@ -1,9 +1,13 @@
 public class AlienThinker implements IThinker
 {
+    public AlienThinker()
+    {
+    }
+
     @Override
     public void yourTurn()
     {
-        System.out.println("lol this is cool");
+        System.out.println("Fuck you");
     }
 
     @Override
