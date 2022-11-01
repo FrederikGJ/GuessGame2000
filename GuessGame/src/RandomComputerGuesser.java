@@ -28,23 +28,24 @@ public class RandomComputerGuesser implements IGuesser
        return guess;
     }
 
-
-
     public void guessFeedback(Answer answer)
     {
-        switch(answer)
-        {
-            case TOO_LOW:
-                min = guess+1;
-                break;
-            case TOO_HIGH:
-                max = guess-1;
-                break;
-            case CORRECT:
-                break;
-            default:
-                throw new RuntimeException("This should never happen!");
-        }
+
+            switch (answer)
+            {
+                case TOO_LOW:
+                    min = guess + 1;
+                    break;
+                case TOO_HIGH:
+                    max = guess - 1;
+                    break;
+                case CORRECT:
+                    break;
+                default:
+                    throw new RuntimeException("This should never happen!");
+            }
+        
+
     }
 
     public boolean endOfGame(int numberOfGuesses, String opponent)
